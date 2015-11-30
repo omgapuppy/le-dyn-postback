@@ -6,6 +6,11 @@ Sends Dyn email bounces and complaints to Logentries
 2. Add a new [token based log](https://logentries.com/doc/input-token/)
 
 ## Configure the listener
+
+Requires Logentries Python library and Python Flask to be installed.
+```pip install logentries```
+```pip install Flask```
+
 1. Replace the ```PORT``` and ```LOGENTRIES_TOKEN``` values with an open port
    in your environment and your Logentries token
 2. Run ```dyn-listener.py```
