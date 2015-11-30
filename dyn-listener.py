@@ -24,8 +24,8 @@ def bounce():
     t = request.args.get('t')
     dc = request.args.get('dc')
     s = request.args.get('s')
-    log.info("BOUNCE: email='{}' rule='{}' type='{}' diagnostic='{}' \
-             status='{}'".format(e, r, t, dc, s))
+    log.info("BOUNCE email='{}' rule='{}' type='{}' diagnostic='{}'\
+    status='{}'".format(e, r, t, dc, s))
     return jsonify(result={"status": 200})
 
 # Enter the following for the complaint postback URL:
@@ -33,7 +33,7 @@ def bounce():
 @listener.route('/complaint', methods=['GET'])
 def complaint():
     e = request.args.get('e')
-    log.info("COMPLAINT: email='{}'".format(e))
+    log.info("COMPLAINT email='{}'".format(e))
     return jsonify(result={"status": 200})
 
 
