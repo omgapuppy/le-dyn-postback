@@ -3,17 +3,17 @@
 from logentries import LogentriesHandler
 import logging
 from flask import Flask, jsonify, request
+import os
 
 listener = Flask(__name__)
 
-# Configure the port your postback URL will listen on and provide your
-# LOGENTRIES_TOKEN
+# Configure the port your postback URL will listen on
 PORT = 5000
-LOGENTRIES_TOKEN = "your-log-token-here"
+# Note - LOGENTRIES_TOKEN is provided via env variable
 
 log = logging.getLogger('logentries')
 log.setLevel(logging.INFO)
-dyn = LogentriesHandler(LOGENTRIES_TOKEN)
+dyn = LogentriesHandler(os.environ["LOGENTRIES_TOKEN"])
 log.addHandler(dyn)
 # Enter the following for the bounce postback URL:
 # SCRIPT_HOST_IP:PORT/bounce?e=@email&r=@bouncerule&t=@bouncetype&dc=@diagnostic&s=@status
