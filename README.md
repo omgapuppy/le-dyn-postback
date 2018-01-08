@@ -11,10 +11,10 @@ Requires Logentries Python library and Python Flask to be installed.
 ```pip install logentries```
 ```pip install Flask```
 
-1. Replace the ```PORT``` and ```LOGENTRIES_TOKEN``` values with an open port
-   in your environment and your Logentries token
-2. Run ```dyn-listener.py```
-   * I recommend running it as a startup service (research your OS documentation)
+1. Replace the ```PORT``` value with an open port
+   in your environment
+2. Set an ENV VAR ```LOGENTRIES_TOKEN=your-le-token```
+3. Run ```dyn-listener.py```
 
 ## Configure Dyn Postback URLs
 1. Log into your Dyn account
